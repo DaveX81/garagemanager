@@ -32,7 +32,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"licensePlate\": \"ABC-CAR\"\n}",
+					"raw": "{\n    \"vehicleType\": \"Car\",\n    \"licensePlate\": \"ABC-CAR\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,7 +40,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/vehicles/car",
+					"raw": "http://localhost:8080/api/vehicles",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -48,8 +48,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"vehicles",
-						"car"
+						"vehicles"
 					]
 				}
 			},
@@ -62,7 +61,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"licensePlate\": \"ABC-BIKE\"\n}",
+					"raw": "{\n    \"vehicleType\": \"MotorBike\",\n    \"licensePlate\": \"ABC-BIKE\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -70,7 +69,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/vehicles/motorbike",
+					"raw": "http://localhost:8080/api/vehicles",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -78,8 +77,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"vehicles",
-						"motorbike"
+						"vehicles"
 					]
 				}
 			},
@@ -90,8 +88,17 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleType\": \"Car\",\n    \"licensePlate\": \"ABC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/api/garage/enter/ABC",
+					"raw": "http://localhost:8080/api/garage/enter",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -100,8 +107,7 @@
 					"path": [
 						"api",
 						"garage",
-						"enter",
-						"ABC"
+						"enter"
 					]
 				}
 			},
@@ -112,8 +118,17 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleType\": \"Car\",\n    \"licensePlate\": \"ABC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/api/garage/exit/ABC",
+					"raw": "http://localhost:8080/api/garage/exit",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -122,8 +137,7 @@
 					"path": [
 						"api",
 						"garage",
-						"exit",
-						"ABC"
+						"exit"
 					]
 				}
 			},
