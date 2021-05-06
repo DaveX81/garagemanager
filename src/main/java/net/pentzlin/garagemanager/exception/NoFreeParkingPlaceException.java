@@ -1,6 +1,10 @@
 package net.pentzlin.garagemanager.exception;
 
-public class NoFreeParkingPlaceException extends Exception{
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
+public class NoFreeParkingPlaceException extends RuntimeException{
     public NoFreeParkingPlaceException(String errorMessage) {
         super(errorMessage);
     }

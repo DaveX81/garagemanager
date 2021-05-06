@@ -1,6 +1,7 @@
 package net.pentzlin.garagemanager.service;
 
 import net.pentzlin.garagemanager.entity.garage.ParkingPlace;
+import net.pentzlin.garagemanager.entity.vehicle.Vehicle;
 import net.pentzlin.garagemanager.exception.NoFreeParkingPlaceException;
 import net.pentzlin.garagemanager.exception.VehicleAlreadyExistsException;
 import net.pentzlin.garagemanager.exception.VehicleNotFoundException;
@@ -9,10 +10,10 @@ import java.util.List;
 
 public interface GarageService {
 
-    void enterGarage(String licensePlate) throws NoFreeParkingPlaceException, VehicleAlreadyExistsException,
+    void enterGarage(Vehicle vehicle) throws NoFreeParkingPlaceException, VehicleAlreadyExistsException,
             VehicleNotFoundException;
 
-    void exitGarage(String licensePlate) throws VehicleNotFoundException;
+    void exitGarage(Vehicle vehicle) throws VehicleNotFoundException;
 
     long getNumberOfFreeParkingPlaces();
 

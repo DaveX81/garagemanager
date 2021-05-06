@@ -1,6 +1,7 @@
 package net.pentzlin.garagemanager.controller;
 
 import net.pentzlin.garagemanager.entity.garage.ParkingPlace;
+import net.pentzlin.garagemanager.entity.vehicle.Vehicle;
 import net.pentzlin.garagemanager.exception.NoFreeParkingPlaceException;
 import net.pentzlin.garagemanager.exception.VehicleAlreadyExistsException;
 import net.pentzlin.garagemanager.exception.VehicleNotFoundException;
@@ -19,15 +20,15 @@ public class GarageController {
         this.garageService = garageService;
     }
 
-    @PutMapping("/garage/enter/{licensePlate}")
-    public void enterGarage(@PathVariable String licensePlate) throws VehicleAlreadyExistsException,
+    @PutMapping("/garage/enter")
+    public void enterGarage(@RequestBody Vehicle vehicle) throws VehicleAlreadyExistsException,
             NoFreeParkingPlaceException, VehicleNotFoundException {
-        this.garageService.enterGarage(licensePlate);
+        this.garageService.enterGarage(vehicle);
     }
 
-    @PutMapping("/garage/exit/{licensePlate}")
-    public void exitGarage(@PathVariable String licensePlate) throws VehicleNotFoundException {
-        this.garageService.exitGarage(licensePlate);
+    @PutMapping("/garage/exit")
+    public void exitGarage(@RequestBody Vehicle vehicle) throws VehicleNotFoundException {
+        this.garageService.exitGarage(vehicle);
     }
 
     @GetMapping("/garage/parkingPlace/{licensePlate}")
