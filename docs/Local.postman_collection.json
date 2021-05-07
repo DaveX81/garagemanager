@@ -114,6 +114,36 @@
 			"response": []
 		},
 		{
+			"name": "Enter Garage with license plate ABC-CAR",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleType\": \"Car\",\n    \"licensePlate\": \"ABC-CAR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/garage/enter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"garage",
+						"enter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Exit garage with license plate",
 			"request": {
 				"method": "PUT",
@@ -121,6 +151,36 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"vehicleType\": \"Car\",\n    \"licensePlate\": \"ABC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/garage/exit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"garage",
+						"exit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exit garage with license plate ABC-CAR",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleType\": \"Car\",\n    \"licensePlate\": \"ABC-CAR\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -181,6 +241,27 @@
 						"api",
 						"garage",
 						"freeParkingPlaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get parked vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/garage/parkedVehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"garage",
+						"parkedVehicles"
 					]
 				}
 			},

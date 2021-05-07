@@ -4,9 +4,11 @@ import net.pentzlin.garagemanager.entity.garage.ParkingPlace;
 import net.pentzlin.garagemanager.entity.vehicle.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ParkingPlaceRepository extends JpaRepository <ParkingPlace, Integer> {
     Optional<ParkingPlace> findFirstByParkedVehicleIsNull();
     Optional<ParkingPlace> findParkingPlaceByParkedVehicle(Vehicle vehicle);
+    List<ParkingPlace> findParkingPlacesByParkedVehicleIsNotNull();
 }

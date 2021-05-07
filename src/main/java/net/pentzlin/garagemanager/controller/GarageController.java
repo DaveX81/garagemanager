@@ -9,6 +9,8 @@ import net.pentzlin.garagemanager.service.GarageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RequestMapping("/api")
@@ -38,7 +40,12 @@ public class GarageController {
     }
 
     @GetMapping("/garage/freeParkingPlaces")
-    public long getNumberofFreeParkingPlaces() {
+    public long getNumberOfFreeParkingPlaces() {
         return this.garageService.getNumberOfFreeParkingPlaces();
+    }
+
+    @GetMapping("/garage/parkedVehicles")
+    public List<Vehicle> getParkedVehicles() {
+        return this.garageService.getAllParkedCars();
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class GarageServiceImpl implements GarageService {
@@ -66,6 +67,14 @@ public class GarageServiceImpl implements GarageService {
     @Override
     public List<ParkingPlace> getAllParkingPlaces() {
         return parkingPlaceRepository.findAll();
+    }
+
+    @Override
+    public List<Vehicle> getAllParkedCars() {
+        var parkedVehicles = parkingPlaceRepository.findParkingPlacesByParkedVehicleIsNotNull().stream()
+                .map(parkingPlace -> parkingPlace.getParkedVehicle())
+                .collect(Collectors.toList());
+        return parkedVehicles;
     }
 
     @Override

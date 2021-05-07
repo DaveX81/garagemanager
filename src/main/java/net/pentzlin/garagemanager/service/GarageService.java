@@ -19,5 +19,7 @@ public interface GarageService {
 
     List<ParkingPlace> getAllParkingPlaces();
 
+    List<Vehicle> getAllParkedCars();
+
     ParkingPlace getParkingPlaceFor(String licensePlate) throws VehicleNotFoundException;
 }
