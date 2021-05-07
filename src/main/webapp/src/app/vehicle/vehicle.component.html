@@ -1,0 +1,14 @@
+<div style="padding: 13px;">
+  <mat-spinner *ngIf="vehicles.length === 0"></mat-spinner>
+
+  <mat-card *ngFor="let vehicle of vehicles" style="margin-top:11px;">
+    <mat-card-header>
+      <mat-card-title>{{vehicle.vehicleType}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Licenseplate: {{vehicle.licensePlate}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

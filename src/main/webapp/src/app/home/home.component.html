@@ -1,0 +1,25 @@
+<div style="padding: 13px;">
+  <mat-spinner *ngIf="vehicles.length === 0"></mat-spinner>
+
+  <mat-card style="margin-top:11px;">
+    <mat-card-header>
+      <mat-card-title>All Parked Cars</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Free parking places: {{numberOfFreeParkingPlaces}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngFor="let vehicle of vehicles" style="margin-top:11px;">
+    <mat-card-header>
+      <mat-card-title>{{vehicle.vehicleType}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Licenseplate: {{vehicle.licensePlate}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
