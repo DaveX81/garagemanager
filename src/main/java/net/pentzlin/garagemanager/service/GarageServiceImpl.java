@@ -27,7 +27,7 @@ public class GarageServiceImpl implements GarageService {
     }
 
     @Override
-    public void enterGarage(Vehicle vehicle) throws NoFreeParkingPlaceException, VehicleAlreadyExistsException,
+    public ParkingPlace enterGarage(Vehicle vehicle) throws NoFreeParkingPlaceException, VehicleAlreadyExistsException,
             VehicleNotFoundException {
         var dbVehicle = vehicleRepository.findVehicleByLicensePlate(vehicle.getLicensePlate());
         if(dbVehicle.isEmpty()) throw new VehicleNotFoundException("Vehicle not found");
@@ -37,6 +37,7 @@ public class GarageServiceImpl implements GarageService {
             parkingPlace.get().setParkedVehicle(dbVehicle.get());
             try {
                 this.parkingPlaceRepository.save(parkingPlace.get());
+                return  parkingPlace.get();
             } catch (DataIntegrityViolationException e) {
                 throw new VehicleAlreadyExistsException("Vehicle already parked", e);
             }

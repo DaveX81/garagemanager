@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface GarageService {
 
-    void enterGarage(Vehicle vehicle) throws NoFreeParkingPlaceException, VehicleAlreadyExistsException,
+    ParkingPlace enterGarage(Vehicle vehicle) throws NoFreeParkingPlaceException, VehicleAlreadyExistsException,
             VehicleNotFoundException;
 
     void exitGarage(Vehicle vehicle) throws VehicleNotFoundException;

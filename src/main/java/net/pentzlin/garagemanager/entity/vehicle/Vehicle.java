@@ -32,6 +32,7 @@ public abstract class Vehicle {
         this.licensePlate = licensePlate;
     }
 
+    @JsonIgnore
     public int getId() {
         return id;
     }

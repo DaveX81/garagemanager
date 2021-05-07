@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RequestMapping("/api")
 public class GarageController {
 
@@ -21,9 +22,9 @@ public class GarageController {
     }
 
     @PutMapping("/garage/enter")
-    public void enterGarage(@RequestBody Vehicle vehicle) throws VehicleAlreadyExistsException,
+    public ParkingPlace enterGarage(@RequestBody Vehicle vehicle) throws VehicleAlreadyExistsException,
             NoFreeParkingPlaceException, VehicleNotFoundException {
-        this.garageService.enterGarage(vehicle);
+        return this.garageService.enterGarage(vehicle);
     }
 
     @PutMapping("/garage/exit")
@@ -37,7 +38,7 @@ public class GarageController {
     }
 
     @GetMapping("/garage/freeParkingPlaces")
-    public long parkedCars() {
+    public long getNumberofFreeParkingPlaces() {
         return this.garageService.getNumberOfFreeParkingPlaces();
     }
 }
