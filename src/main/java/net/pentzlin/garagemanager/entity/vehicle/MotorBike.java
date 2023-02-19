@@ -1,6 +1,6 @@
 package net.pentzlin.garagemanager.entity.vehicle;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @DiscriminatorValue("MotorBike")

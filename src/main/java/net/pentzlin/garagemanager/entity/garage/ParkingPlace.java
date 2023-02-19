@@ -2,7 +2,7 @@ package net.pentzlin.garagemanager.entity.garage;
 
 import net.pentzlin.garagemanager.entity.vehicle.Vehicle;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="parking_place", uniqueConstraints = {@UniqueConstraint(columnNames = {"parking_number", "parkinglevel_id"})})
